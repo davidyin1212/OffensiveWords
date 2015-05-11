@@ -90,6 +90,7 @@ func get_file_score(risk_map map[string]int, file_path string) (score int) {
 	for scanner.Scan() {
 		val := risk_map[strings.ToLower(stripchars(scanner.Text()))]
 		if val == 3 {
+			val = 0
 			var buffer bytes.Buffer
 			buffer.WriteString(strings.ToLower(scanner.Text()))
 			for scanner.Scan() {
